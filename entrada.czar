@@ -1,0 +1,33 @@
+%%
+	Arquivo de testes
+%%
+
+{linha f} >> g >> linha {
+	V caractere &c E f ->
+		? c >= 'a' && c <= 'z' ->
+			c << c - 'a' + 'A';
+	$ f;
+}
+
+{} >> inicio >> inteiro {
+
+	linha hw[2];
+	
+	hw[0] << "Hello ";
+	hw[1] << "World!";
+	
+	saida << { hw[0] + hw[1] + " ---> " + g << {hw[0]} + g << {hw[1]} + "\n" };
+	
+	inteiro d;
+	
+	d << 1+5/5;
+	
+	saida << {"1 + 5 / 5  = " + d + "\n"};
+	
+	d << 2 + 3 * 9 ^ (5 - 3);
+	
+	saida << {"2 + 3 * 9 ^ (5 - 3) = " + d + "\n"};
+	
+	$ 0;
+}
+

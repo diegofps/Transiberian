@@ -1,0 +1,27 @@
+%%
+	Programa: Fatorial
+	
+	Descrição: Calcula o fatorial de um numero
+	
+	Utiliza: Cabecalhos, Funcao recursiva, atribuições, If, comentario, concatenacao de strings com inteiros e string
+%%
+
+{duplo n} >> fatorial >> duplo;
+
+{} >> inicio >> inteiro {
+	duplo n;
+	
+	saida << {"Digite um numero para calcular seu fatorial: "};
+	
+	entrada >> {n};
+	
+	saida << { n + "! = " + fatorial << {n} + "\n"};
+	
+	$ 0;
+}
+
+{duplo n} >> fatorial >> duplo {
+	? n = 0 >> $ 1.0;
+	$ n * fatorial << {n-1};
+}
+

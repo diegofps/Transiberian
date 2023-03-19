@@ -1,0 +1,56 @@
+%%
+	Programa: OrdenaVetor
+	
+	Descrição: Ordena um vetor de tamanho 100 com numeros aleatorios e o exibe na saida padrao
+	
+	Utiliza: Cabecalhos, Funcoes, Vetores, Referencia, atribuições, If, For, comentario
+%%
+
+{inteiro &y[10]} >> encheVetor >> vazio;
+{inteiro &y[10]} >> imprimeVetor >> vazio;
+{inteiro &y[10]} >> ordenaVetor >> vazio;
+
+{ } >> inicio >> inteiro {
+
+	inteiro v[10];
+	
+	encheVetor << {v};
+	
+	imprimeVetor << {v};
+	
+	ordenaVetor << {v};
+	
+	imprimeVetor << {v};
+	
+	$ 0;
+}
+
+{inteiro &y[10]} >> encheVetor >> vazio {
+	V inteiro &i E y ->
+		i << aleatorio % 1000;
+	$;
+}
+
+{inteiro &y[10]} >> imprimeVetor >> vazio {
+	
+	V inteiro i E y ->
+		saida << {i + "\n"};
+	
+	saida << {"\n"};
+	
+	$;
+}
+
+{inteiro &y[10]} >> ordenaVetor >> vazio {
+	inteiro i, j, temp;
+	
+	( i << 0; ? i < 9 -> i << i + 1; )
+		( j << i + 1; ? j < 10 -> j << j + 1; )
+			? y[j] < y[i] >> {
+				temp << y[j];
+				y[j] << y[i];
+				y[i] << temp;
+			}
+	$;
+}
+

@@ -1,0 +1,50 @@
+%%
+	Programa: LetrasMaiusculas
+	
+	Descrição: Converte todos os caracteres de todas as linhas de uma matriz 3 x 3 para caracteres maiusculos
+	
+	Utiliza: Cabecalhos, Funcoes, Matrizes, Referencia de matrizes, atribuições, If, Foreach caractere em uma matriz 2 x 2 de linhas, comentario
+%%
+
+{ linha &v[3,3] } >> inicializaMatriz >> vazio;
+{ linha &v[3,3] } >> trataMatriz >> vazio;
+{ linha &v[3,3] } >> imprimeMatriz >> vazio;
+
+{} >> inicio >> inteiro {
+	linha v[3,3];
+	
+	inicializaMatriz << {v};
+	
+	imprimeMatriz << {v};
+	
+	trataMatriz << {v};
+	
+	imprimeMatriz << {v};
+	
+	$ 0;
+}
+
+{ linha &v[3,3] } >> inicializaMatriz >> vazio {
+	v[0,0] << "Diego Fonseca Pereira de Souza";
+	v[0,1] << "Paula Soares Loureiro";
+	v[0,2] << "Gustavo Rodrigues Lima";
+	v[1,0] << "Nadeem Ahmad Tahir";
+	v[1,1] << "Leonardo Polly Assumpcao";
+	v[1,2] << "Thiago Mendes de Mello";
+	v[2,0] << "Wander Mendonca Soares";
+	v[2,1] << "Leticia Brugger Ferreira";
+	v[2,2] << "Raphaela Pedreira Nunes";
+}
+
+{ linha &v[3,3] } >> trataMatriz >> vazio {
+	V caractere &c E v ->
+		? c >= 'a' && c <= 'z' >>
+			c << c - 'a' + 'A';
+}
+
+{ linha &v[3,3] } >> imprimeMatriz >> vazio {
+	V linha l E v ->
+		saida << {l + "\n"};
+	saida << {"\n"};
+}
+

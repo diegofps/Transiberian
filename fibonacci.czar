@@ -1,0 +1,18 @@
+{inteiro i} >> F >> inteiro {
+	? i = 0 >> $ 0;
+	? i = 1 >> $ 1;
+	$ F << {i-1} + F << {i-2};
+}
+
+{} >> inicio >> inteiro {
+	inteiro n;
+	
+	saida << {"\nDigite um numero para n: "};
+	
+	entrada >> {n};
+	
+	saida << {"N-esimo numero da sequencia de fibonacci: " + F << {n} + "\n\n"};
+	
+	$ 0;
+}
+
